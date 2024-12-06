@@ -8,7 +8,13 @@ const IconCloudWrapper = () => {
     setIsClient(true); // Hanya aktif setelah komponen di-mount di sisi client
   }, []);
 
-  if (!isClient) return <>Wait...</>; // mengunggu
+  if (!isClient) {
+    return (
+      <div className="relative flex size-full text-orange-300 w-full items-center justify-center overflow-hidden rounded-lg px-20 pb-20 pt-12">
+        Waiting...
+      </div>
+    );
+  }
 
   return <IconCloudDemo />;
 };
