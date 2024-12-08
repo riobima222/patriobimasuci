@@ -16,6 +16,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { MdOutlineAttachEmail } from "react-icons/md";
 import { MdOutlinePlace } from "react-icons/md";
+import { FaBook } from "react-icons/fa";
 
 const robotoMono = Roboto_Mono({
   weight: ["400", "700"],
@@ -50,17 +51,19 @@ export default function Home() {
   return (
     <div className="bg-[#0d1117] min-h-screen p-10 text-gray-200">
       {/* HERO SECTION */}
-      <div className="flex gap-12 items-start">
+      <div className="flex lg:flex-row flex-col gap-12 items-start">
         {/* LEFT CONTENT */}
-        <div className="max-w-[240px] lg:max-w-[300px] w-full">
-          <div className="border-[1.2px] border-gray-500 rounded-full overflow-hidden">
-            <Image
-              src={"/images/profile.jpg"}
-              alt="profile-image"
-              width={500}
-              height={500}
-              className="w-full h-full"
-            />
+        <div className="lg:max-w-[300px] w-full">
+          <div className="flex justify-center sm:justify-start">
+            <div className="border-[1.2px] max-w-[17em] border-gray-500 rounded-full overflow-hidden">
+              <Image
+                src={"/images/profile.jpg"}
+                alt="profile-image"
+                width={500}
+                height={500}
+                className="w-full h-full"
+              />
+            </div>
           </div>
           <h1 className="text-2xl font-bold mt-4">Patrio Bimasuci</h1>
           <h3 className="text-xl text-gray-500">@riobima222</h3>
@@ -113,16 +116,20 @@ export default function Home() {
           >
             Give a Star
           </button>
-          <div className="mt-3">
+          <div className="mt-3 flex flex-col gap-2">
             <div className="flex items-center gap-2">
-              <MdOutlinePlace />
+              <FaBook className="text-sm" />
+              <span className="text-sm">University Of Islam - PPWB kediri</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <MdOutlinePlace className="text-sm" />
               <span className="text-sm">indonesia - java</span>
             </div>
           </div>
         </div>
 
         {/* RIGHT CONTENT */}
-        <div className="border-[.5px] border-gray-700 rounded-md p-10 w-full">
+        <div className="max-w-[64em] w-full border-[.5px] border-gray-700 rounded-md p-10">
           <motion.div
             key={key}
             className={`${robotoMono.className} text-sm tracking-widest flex gap-[1px]`}
@@ -237,7 +244,7 @@ export default function Home() {
             </motion.div>
             <h2 className="font-bold">Highlight Projects :</h2>
           </div>
-          <div className="flex justify-center items-center mt-6">
+          <div className="flex flex-wrap gap-10 justify-center items-center mt-6">
             <PinWrapper
               title="See application"
               href="https://sigma-todolist.vercel.app"

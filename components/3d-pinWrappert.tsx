@@ -17,9 +17,9 @@ export default function PinWrapper({
   img: string;
 }) {
   return (
-    <div className="h-[30rem] w-full flex items-center justify-center ">
+    <div className="h-[30rem] w-[20em] flex items-center justify-center">
       <PinContainer title={title} href={href}>
-        <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem]">
+        <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[18rem]">
           <h3 className="max-w-xs !pb-2 !m-0 font-bold text-3xl text-base text-slate-100">
             {contentTitle}
           </h3>
