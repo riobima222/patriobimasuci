@@ -12,7 +12,6 @@ export default function GreetingAnimation() {
   return (
     <motion.div
       ref={handRef}
-      className="text-5xl"
       style={{ transformOrigin: "bottom right" }}
       animate={{
         rotate: isInView3 ? [0, 20, -20, 20, 0] : 0,

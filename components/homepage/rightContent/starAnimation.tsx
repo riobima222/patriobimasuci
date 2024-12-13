@@ -15,10 +15,10 @@ export default function StarAnimation() {
       ref={starRef}
       initial={{ scale: 0, opacity: 0 }}
       animate={{
-        scale: isInView ? [0.8, 1.2, 0.8] : 0.8, // Default: 0.8
-        opacity: isInView ? [0.7, 1, 0.7] : 0.7, // Default: 0.7
-        rotate: isInView ? [0, 360, 0] : 0, // Default: 0
-        y: isInView ? [0, -20, 0] : 0, // Default: 0
+        scale: isInView ? [0.8, 1.2, 0.8] : 0.8,
+        opacity: isInView ? [0.7, 1, 0.7] : 0.7,
+        rotate: isInView ? [0, 360, 0] : 0,
+        y: isInView ? [0, -20, 0] : 0,
       }}
       transition={{
         duration: 2,

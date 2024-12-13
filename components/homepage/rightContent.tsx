@@ -14,6 +14,7 @@ import RocketAnimation from "./rightContent/rocketAnimation";
 import GreetingAnimation from "./rightContent/greetingAnimation";
 import PinElement from "./rightContent/pinElement";
 
+
 export default function RightContent() {
   return (
     <div className="max-w-[64em] w-full border-[.5px] border-gray-700 rounded-md md:p-10 p-4">
@@ -21,7 +22,9 @@ export default function RightContent() {
         Patrio Bimasuci / README.md
       </h5>
       <div className="flex items-center gap-2 text-4xl mt-6">
-        <GreetingAnimation />
+        <div className="w-[1.5em] h-[1.5em] flex justify-center items-center">
+          <GreetingAnimation />
+        </div>
         <h2 className="italic">
           Hi, Im <span className="font-bold">Patrio Bimasuci</span>
         </h2>
@@ -33,12 +36,16 @@ export default function RightContent() {
         excited to learn and grow my skill in the tech world
       </p>
       <div className="flex items-center mt-12 text-3xl gap-3 relative">
-        <RocketAnimation />
+        <div className="w-[1.5em] h-[1.5em] flex justify-center items-center">
+          <RocketAnimation />
+        </div>
         <h2 className="font-bold">Technologies :</h2>
       </div>
       <IconCloudWrapper />
       <div className="flex items-center text-3xl gap-3 relative">
-        <StarAnimation />
+        <div className="w-[1.5em] h-[1.5em] flex justify-center items-center">
+          <StarAnimation />
+        </div>
         <h2 className="font-bold">Highlight Projects :</h2>
       </div>
       <PinElement />
