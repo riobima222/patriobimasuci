@@ -9,6 +9,7 @@ import {
   renderSimpleIcon,
   SimpleIcon,
 } from "react-icon-cloud";
+import Image from "next/image";
 
 export const cloudProps: Omit<ICloud, "children"> = {
   containerProps: {
@@ -80,12 +81,10 @@ export function IconCloud({ iconSlugs }: DynamicCloudProps) {
   }, [data, theme]);
 
   return (
-    // @ts-ignore
     <Cloud {...cloudProps}>
-      // @ts-ignore
       <>{renderedIcons}</>
       <a href="#" target="_blank" rel="noopener">
-        <img
+        <Image
           height="60"
           width="60"
           alt="A globe"
@@ -93,7 +92,7 @@ export function IconCloud({ iconSlugs }: DynamicCloudProps) {
         />
       </a>
       <a href="#" target="_blank" rel="noopener">
-        <img
+        <Image
           height="60"
           width="60"
           alt="A globe"

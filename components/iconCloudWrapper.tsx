@@ -1,3 +1,4 @@
+"use client"
 import { useEffect, useState } from "react";
 import { IconCloudDemo } from "@/components/loader";
 
@@ -10,8 +11,8 @@ const IconCloudWrapper = () => {
 
   if (!isClient) {
     return (
-      <div className="relative flex size-full text-orange-300 w-full items-center justify-center overflow-hidden rounded-lg px-20 pb-20 pt-12">
-        Waiting...
+      <div className="relative h-[650px] sm:h-[700px] flex size-full text-gray-300 w-full items-center justify-center overflow-hidden rounded-lg px-20 pb-20 pt-12">
+        Load...
       </div>
     );
   }
