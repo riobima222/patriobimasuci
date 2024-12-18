@@ -17,7 +17,7 @@ export default function PinElement() {
   return (
     <div
       ref={ref1}
-      className="flex flex-wrap gap-10 justify-center items-center mt-6"
+      className="flex sm:min-h-[33em] min-h-[66em] flex-wrap gap-10 justify-center items-center mt-6"
     >
       <Suspense fallback={<LoadingPlaceholder />}>
         {inView1 && (

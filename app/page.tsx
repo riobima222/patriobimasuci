@@ -8,7 +8,6 @@ export default function Home() {
       <div className="flex lg:flex-row flex-col gap-12 items-start">
         {/* LEFT CONTENT */}
         <LeftContent />
-
         {/* RIGHT CONTENT */}
         <RightContent />
       </div>
