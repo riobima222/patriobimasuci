@@ -13,6 +13,8 @@ export default function Repository({
   forkRef,
   fork,
   isFork,
+  starsLink,
+  titleLink
 }: {
   stars: number;
   title: string;
@@ -21,6 +23,8 @@ export default function Repository({
   forkRef?: string;
   fork?: string;
   isFork?: boolean;
+  starsLink: string;
+  titleLink: string;
 }) {
   const classname = clsx("block w-3 h-3 rounded-full", {
     "bg-[#327ac7]": tech === "typescript",
@@ -32,7 +36,8 @@ export default function Repository({
       <div className="flex gap-1 justify-start items-center">
         <TbBook2 className="text-xl text-[#9198a1] flex-shrink-0 w-auto h-auto" />
         <Link
-          href="/https://github.com/riobima222/chatting-app"
+          href={`https://github.com/riobima222/${titleLink}`}
+          target="_blank"
           className="text-[#4189e8] hover:underline font-semibold"
         >
           {title}
@@ -46,6 +51,7 @@ export default function Repository({
           Forked from{" "}
           <Link
             href={forkRef || "/"}
+            target="_blank"
             className="underline hover:text-[#4189e8]"
           >
             {fork}
@@ -60,10 +66,13 @@ export default function Repository({
           <span className={classname} />
           <p className="text-sm">{tech}</p>
         </div>
-        <div className="flex items-center gap-1 hover:cursor-pointer hover:text-[#4189e8]">
+        <Link
+          href={`/stars/${starsLink}`}
+          className="flex items-center gap-1 hover:cursor-pointer hover:text-[#4189e8]"
+        >
           <FaRegStar />
           <span>{stars}</span>
-        </div>
+        </Link>
       </div>
     </div>
   );
