@@ -1,21 +1,14 @@
 // ICONS :
-import {
-  chattingApp,
-  personalBlog,
-  portfolio,
-  sigmaBlog,
-  sigmaStore,
-  sigmaTodoList,
-} from "@/utils/fetchingStars";
+import { fetchingStars } from "@/utils/fetchingStars";
 import Repository from "../pinnedContent/repo";
 
 export default async function PinnedELement() {
-  const chattingAppStars = await chattingApp();
-  const personalBlogStars = await personalBlog();
-  const portfolioStars = await portfolio();
-  const sigmaBlogStars = await sigmaBlog();
-  const sigmaTodoListStars = await sigmaTodoList();
-  const sigmaStoreStars = await sigmaStore();
+  const chattingAppStars = await fetchingStars("chatting-app");
+  const personalBlogStars = await fetchingStars("personal-blog");
+  const portfolioStars = await fetchingStars("portfolio.");
+  const sigmaBlogStars = await fetchingStars("sigma-blog");
+  const sigmaTodoListStars = await fetchingStars("sigma-todo-list");
+  const sigmaStoreStars = await fetchingStars("sigma_store");
   return (
     <div className="grid sm:grid-cols-2 grid-cols-1 gap-3 max-w-[64em] w-full rounded-md mt-2">
       {/* REPOSITORY 1 */}
