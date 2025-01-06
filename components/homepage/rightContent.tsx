@@ -8,12 +8,12 @@ const robotoMono = Roboto_Mono({
 });
 
 // IMPORT COMPONENTS :
-import IconCloudWrapper from "@/components/iconCloudWrapper";
 import StarAnimation from "./rightContent/starAnimation";
 import RocketAnimation from "./rightContent/rocketAnimation";
 import GreetingAnimation from "./rightContent/greetingAnimation";
 import PinElement from "./rightContent/pinElement";
 import PinnedELement from "./rightContent/pinnedElement";
+import IconCloudWrapper from "./rightContent/iconCloudWrapper";
 
 export default function RightContent() {
   return (
@@ -42,7 +42,9 @@ export default function RightContent() {
           </div>
           <h2 className="font-bold">Technologies :</h2>
         </div>
+        <div className="flex justify-center">
         <IconCloudWrapper />
+        </div>
         <div className="flex items-center text-3xl gap-3 relative">
           <div className="w-[1.5em] h-[1.5em] flex justify-center items-center">
             <StarAnimation />

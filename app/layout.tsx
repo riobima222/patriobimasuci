@@ -2,8 +2,11 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-// animate framer motion
+// animate framer motion :
 import { AnimatePresence } from "framer-motion";
+
+// CONTEXT :
+import ModalContextProvider from "@/context/modalContext";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -31,7 +34,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <AnimatePresence mode="wait">{children}</AnimatePresence>
+        <AnimatePresence mode="wait">
+          <ModalContextProvider>{children}</ModalContextProvider>
+        </AnimatePresence>
       </body>
     </html>
   );

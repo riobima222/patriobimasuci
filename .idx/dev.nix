@@ -9,6 +9,7 @@
     pkgs.yarn
     pkgs.nodePackages.pnpm
     pkgs.bun
+    pkgs.openssl_3_3.bin
   ];
   # Sets environment variables in the workspace
   env = {};

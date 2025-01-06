@@ -9,7 +9,11 @@ import {
   renderSimpleIcon,
   SimpleIcon,
 } from "react-icon-cloud";
-import Image from "next/image";
+
+export type DynamicCloudProps = {
+  iconSlugs?: string[]; // Made iconSlugs optional
+  imageArray?: string[];
+};
 
 export const cloudProps: Omit<ICloud, "children"> = {
   containerProps: {
@@ -38,10 +42,14 @@ export const cloudProps: Omit<ICloud, "children"> = {
   },
 };
 
-export const renderCustomIcon = (icon: SimpleIcon, theme: string) => {
-  const bgHex = theme === "light" ? "#242d3b" : "#242d3b";
-  const fallbackHex = theme === "light" ? "#6e6e73" : "#242d3b";
-  const minContrastRatio = theme === "dark" ? 2 : 1.5;
+export const renderCustomIcon = (
+  icon: SimpleIcon,
+  theme: string,
+  imageArray?: string[]
+) => {
+  const bgHex = theme === "light" ? "#f3f2ef" : "#080510";
+  const fallbackHex = theme === "light" ? "#6e6e73" : "#ffffff";
+  const minContrastRatio = theme === "dark" ? 2 : 1.2;
 
   return renderSimpleIcon({
     icon,
@@ -53,52 +61,50 @@ export const renderCustomIcon = (icon: SimpleIcon, theme: string) => {
       href: undefined,
       target: undefined,
       rel: undefined,
-      onClick: (e: any) => e.preventDefault(),
+      onClick: (e: React.MouseEvent<HTMLAnchorElement>) => e.preventDefault(),
     },
   });
 };
 
-export type DynamicCloudProps = {
-  iconSlugs: string[];
-};
-
 type IconData = Awaited<ReturnType<typeof fetchSimpleIcons>>;
 
-export function IconCloud({ iconSlugs }: DynamicCloudProps) {
+export default function IconCloud({
+  iconSlugs = [],
+  imageArray,
+}: DynamicCloudProps) {
   const [data, setData] = useState<IconData | null>(null);
   const { theme } = useTheme();
 
   useEffect(() => {
-    fetchSimpleIcons({ slugs: iconSlugs }).then(setData);
+    if (iconSlugs.length > 0) {
+      // Check if iconSlugs is not empty
+      fetchSimpleIcons({ slugs: iconSlugs }).then(setData);
+    }
   }, [iconSlugs]);
 
   const renderedIcons = useMemo(() => {
     if (!data) return null;
 
     return Object.values(data.simpleIcons).map((icon) =>
-      renderCustomIcon(icon, theme || "dark")
+      renderCustomIcon(icon, theme || "light")
     );
   }, [data, theme]);
 
   return (
+    // @ts-ignore
     <Cloud {...cloudProps}>
-      <>{renderedIcons}</>
-      <a href="#" target="_blank" rel="noopener">
-        <Image
-          height="60"
-          width="60"
-          alt="A globe"
-          src="https://i.postimg.cc/Nj5K8GR4/next-auth.png"
-        />
-      </a>
-      <a href="#" target="_blank" rel="noopener">
-        <Image
-          height="60"
-          width="60"
-          alt="A globe"
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
-        />
-      </a>
+      <>
+        <>{renderedIcons}</>
+        {imageArray &&
+          imageArray.length > 0 &&
+          imageArray.map((image, index) => {
+            return (
+              <a key={index} href="#" onClick={(e) => e.preventDefault()}>
+                <img height="42" width="42" alt="A globe" src={image} />
+              </a>
+            );
+          })}
+      </>
     </Cloud>
   );
 }

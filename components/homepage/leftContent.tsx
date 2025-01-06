@@ -1,3 +1,4 @@
+"use client";
 // IMPORT ICONS :
 import { LiaStarSolid } from "react-icons/lia";
 import { MdOutlinePlace } from "react-icons/md";
@@ -6,8 +7,12 @@ import { FaBook } from "react-icons/fa";
 // IMPORT COMPONENTS :
 import HeroImage from "./leftContent/heroImage";
 import SocialMedia from "./leftContent/socialMedia";
+import GiveStar from "@/components/homepage/giveStar";
+import { useContext } from "react";
+import { ModalContext } from "@/context/modalContext";
 
 export default function LeftContent() {
+  const { isOpen, setIsOpen }: any = useContext(ModalContext);
   return (
     <div className="lg:max-w-[300px] w-full">
       <div className="flex justify-center sm:justify-start">
@@ -26,6 +31,7 @@ export default function LeftContent() {
       <button
         type="button"
         className="block w-full py-2 rounded-md border-[1px] border-gray-500 text-sm text-center mt-3 bg-[#212830] hover:bg-[#343c45]"
+        onClick={() => setIsOpen(true)}
       >
         Give a Star
       </button>
@@ -36,9 +42,10 @@ export default function LeftContent() {
         </div>
         <div className="flex items-center gap-2">
           <MdOutlinePlace className="text-sm" />
-          <span className="text-sm">indonesia - java</span>
+          <span className="text-sm">Indonesia - java</span>
         </div>
       </div>
+      {isOpen && <GiveStar />}
     </div>
   );
 }
