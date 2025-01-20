@@ -1,7 +1,8 @@
 import LeftContent from "@/components/homepage/leftContent";
 import RightContent from "@/components/homepage/rightContent";
 
-export default function Home() {
+
+export default async function Home() {
   return (
     <div className="bg-[#0d1117] min-h-screen md:p-10 p-3 text-gray-200">
       {/* HERO SECTION */}

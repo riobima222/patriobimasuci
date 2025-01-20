@@ -29,19 +29,19 @@ export default function PinElement() {
               contentDesc={
                 <>
                   <p className="text-slate-300">
-                    Aplikasi TodoList sederhana namun lengkap. Pengguna dapat :
+                    A simple todo-list application where users can :
                   </p>
                   <ul className="mt-2 list-disc">
-                    <li> Mendaftar dan login untuk akses personal.</li>
+                    <li> Register and log in for personal access.</li>
                     <li>
                       {" "}
-                      Menambahkan task dan menandai task yang sudah selesai.
+                      Add task and mark task as completed.
                     </li>
                     <li>
                       {" "}
-                      Task yang selesai akan dipindahkan ke daftar ceklist.
+                      Completed task will be moved to a checklist.
                     </li>
-                    <li> Task yang sudah tidak digunakan bisa dihapus.</li>
+                    <li> Task that are no longer nedded can be deleted.</li>
                   </ul>
                 </>
               }
@@ -54,17 +54,17 @@ export default function PinElement() {
               contentDesc={
                 <>
                   <p className="text-slate-300">
-                    Aplikasi chatting real-time modern dengan fitur :
+                    A modern real-time chat application with features :
                   </p>
                   <ul className="mt-2 list-disc">
                     <li>
-                      Login dan register menggunakan Firebase Authentication.
+                      Login and register using firebase authentication.
                     </li>
                     <li>
                       {" "}
-                      Pesan dikirim dan diterima secara instan tanpa reload.
+                      Messages are send and received instanly without reloading.
                     </li>
-                    <li> Desain responsif dengan Tailwind CSS.</li>
+                    <li>Responsive design with tailwind CSS.</li>
                   </ul>
                 </>
               }

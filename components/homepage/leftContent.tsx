@@ -1,4 +1,4 @@
-"use client";
+"use client"
 // IMPORT ICONS :
 import { LiaStarSolid } from "react-icons/lia";
 import { MdOutlinePlace } from "react-icons/md";
@@ -8,11 +8,52 @@ import { FaBook } from "react-icons/fa";
 import HeroImage from "./leftContent/heroImage";
 import SocialMedia from "./leftContent/socialMedia";
 import GiveStar from "@/components/homepage/giveStar";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ModalContext } from "@/context/modalContext";
+import { DocumentData, QuerySnapshot, collection, onSnapshot } from "firebase/firestore";
+import { db } from "@/lib/firebase/init";
+
 
 export default function LeftContent() {
   const { isOpen, setIsOpen }: any = useContext(ModalContext);
+  const [blogStar, setBlogStar] = useState<BlogStar[]>([]);
+  const [error, setError] = useState<string | null>(null);
+
+  interface BlogStar {
+    id: string;
+    name: string;
+  }
+
+  useEffect(() => {
+    try {
+      const unsubscribe = onSnapshot(
+        collection(db, "blogStar"),
+        (snapshot: QuerySnapshot<DocumentData>) => {
+          const updateData: BlogStar[] = snapshot.docs.map((doc) => ({
+            id: doc.id,
+            ...(doc.data() as Omit<BlogStar, 'id'>)
+          }));
+          setBlogStar(updateData);
+        },
+        (error: Error) => {
+          console.error("Error fetching blogStar:", error);
+          setError(error.message);
+        }
+      );
+
+      // Cleanup subscription
+      return () => unsubscribe();
+    } catch (err) {
+      const error = err as Error;
+      console.error("Error setting up snapshot:", error);
+      setError(error.message);
+    }
+  }, []);
+
+  if (error) {
+    return <div className="text-red-500">Error: {error}</div>;
+  }
+
   return (
     <div className="lg:max-w-[300px] w-full">
       <div className="flex justify-center sm:justify-start">
@@ -26,7 +67,7 @@ export default function LeftContent() {
       <SocialMedia />
       <div className="flex items-center text-sm gap-1 mt-6">
         <LiaStarSolid className="text-xl text-[#FFD700]" />
-        <div>50</div>
+        <div>{ blogStar.length ||`-`}</div>
       </div>
       <button
         type="button"

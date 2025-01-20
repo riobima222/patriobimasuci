@@ -3,10 +3,10 @@ import { fetchingStars } from "@/utils/fetchingStars";
 import Repository from "../pinnedContent/repo";
 
 export default async function PinnedELement() {
-  const chattingAppStars = await fetchingStars("chatting-app");
-  const personalBlogStars = await fetchingStars("personal-blog");
+  const chattingAppStars = await fetchingStars("erchat-app");
+  const personalBlogStars = await fetchingStars("personal_blog");
   const portfolioStars = await fetchingStars("portfolio.");
-  const sigmaBlogStars = await fetchingStars("sigma-blog");
+  const blogPortfolioStars = await fetchingStars("blog-portfolio");
   const sigmaTodoListStars = await fetchingStars("sigma-todo-list");
   const sigmaStoreStars = await fetchingStars("sigma_store");
   return (
@@ -14,10 +14,10 @@ export default async function PinnedELement() {
       {/* REPOSITORY 1 */}
       <Repository
         stars={chattingAppStars.length}
-        title="chatting-app"
-        titleLink="chatting-app"
+        title="erchat-app"
+        titleLink="erchat-app"
         tech="typescript"
-        starsLink="chatting-app"
+        starsLink="erchat-app"
       >
         Simple chatting app, you can stay connected with your close friend.
       </Repository>
@@ -25,10 +25,10 @@ export default async function PinnedELement() {
       {/* REPOSITORY 2 */}
       <Repository
         stars={personalBlogStars.length}
-        title="personal-blog"
-        titleLink="personal-blog"
+        title="personal_blog"
+        titleLink="personal_blog"
         tech="typescript"
-        starsLink="personal-blog"
+        starsLink="personal_blog"
       >
         my personal blog, i write a lot of topics about programing
       </Repository>
@@ -49,11 +49,11 @@ export default async function PinnedELement() {
 
       {/* REPOSITORY 4 */}
       <Repository
-        stars={sigmaBlogStars.length}
-        title="sigma-blog"
-        titleLink="sigma-blog"
-        tech="javascript"
-        starsLink="sigma-blog"
+        stars={blogPortfolioStars.length}
+        title="blog-portfolio"
+        titleLink="blog-portfolio"
+        tech="typescript"
+        starsLink="blog-portfolio"
       >
         Simple chatting app, you can stay connected with your close friend.
       </Repository>
