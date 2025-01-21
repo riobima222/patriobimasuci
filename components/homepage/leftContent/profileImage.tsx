@@ -7,7 +7,7 @@ export default function ProfileImage () {
         alt="profile-image"
         width={300}
         height={300}
-        className="w-full h-full max-w-[17em] max-h-[17em]"
+        className="sm:w-[17em] sm:h-[17em] w-[12em] h-[12em]"
         priority={true}
       />
     );

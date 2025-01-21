@@ -26,7 +26,7 @@ export default function RightContent() {
           <div className="w-[1.5em] h-[1.5em] flex justify-center items-center">
             <GreetingAnimation />
           </div>
-          <h2 className="italic">
+          <h2 className="italic text-lg sm:text-2xl">
             Hi, Im <span className="font-bold">Patrio Bimasuci</span>
           </h2>
         </div>
@@ -40,7 +40,7 @@ export default function RightContent() {
           <div className="w-[1.5em] h-[1.5em] flex justify-center items-center">
             <RocketAnimation />
           </div>
-          <h2 className="font-bold">Technologies :</h2>
+          <h2 className="font-bold sm:text-2xl text-lg">Technologies :</h2>
         </div>
         <div className="flex justify-center">
         <IconCloudWrapper />
@@ -49,7 +49,7 @@ export default function RightContent() {
           <div className="w-[1.5em] h-[1.5em] flex justify-center items-center">
             <StarAnimation />
           </div>
-          <h2 className="font-bold">Highlight Projects :</h2>
+          <h2 className="font-bold sm:text-2xl text-lg">Highlight Projects :</h2>
         </div>
         <PinElement />
         <div className="mt-14 flex justify-center">

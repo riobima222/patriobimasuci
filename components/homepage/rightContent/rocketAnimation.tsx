@@ -14,7 +14,7 @@ export default function RocketAnimation() {
       ref={roketRef}
       animate={{
         rotate: isInView2 ? [0, 100, 0, 100, 0] : 0, // Nilai default: 0
-        x: isInView2 ? [0, 250, 0] : 0, // Nilai default: 0
+        x: isInView2 ? [0, 205, 0] : 0, // Nilai default: 0
         y: isInView2 ? [0, -20, -40, -30, -10, 0, 10, 30, 40, 20, 0] : 0, // Nilai default: 0
       }}
       transition={{
