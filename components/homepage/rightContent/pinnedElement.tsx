@@ -6,7 +6,7 @@ export default async function PinnedELement() {
   const chattingAppStars = await fetchingStars("erchat-app");
   const personalBlogStars = await fetchingStars("personal_blog");
   const portfolioStars = await fetchingStars("portfolio.");
-  const blogPortfolioStars = await fetchingStars("blog-portfolio");
+  const patriobimasuciStars = await fetchingStars("patriobimasuci");
   const sigmaTodoListStars = await fetchingStars("sigma-todo-list");
   const sigmaStoreStars = await fetchingStars("sigma_store");
   return (
@@ -49,11 +49,11 @@ export default async function PinnedELement() {
 
       {/* REPOSITORY 4 */}
       <Repository
-        stars={blogPortfolioStars.length}
-        title="blog-portfolio"
-        titleLink="blog-portfolio"
+        stars={patriobimasuciStars.length}
+        title="patriobimasuci"
+        titleLink="patriobimasuci"
         tech="typescript"
-        starsLink="blog-portfolio"
+        starsLink="patriobimasuci"
       >
         Simple chatting app, you can stay connected with your close friend.
       </Repository>
