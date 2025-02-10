@@ -45,7 +45,7 @@ export default function PinElement() {
                   </ul>
                 </>
               }
-              img="https://i.postimg.cc/wjsbCg9x/Sigma-Todo-List.jpg"
+              img="https://i.imgur.com/JEh7XXi.jpeg"
             ></PinWrapper>
             <PinWrapper
               title="See application"
