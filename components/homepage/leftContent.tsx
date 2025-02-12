@@ -71,7 +71,7 @@ export default function LeftContent() {
       </div>
       <button
         type="button"
-        className="block w-full py-2 rounded-lg border-[1px] border-gray-500 text-sm text-center mt-3 bg-[#212830] hover:bg-[#343c45]"
+        className="block w-full py-2 rounded-lg border-[1px] border-gray-500 text-sm text-center mt-3 dark:bg-[#212830] dark:hover:bg-[#343c45] hover:bg-[#343c45] hover:text-white transition-all duration-200"
         onClick={() => setIsOpen(true)}
       >
         Give a Star

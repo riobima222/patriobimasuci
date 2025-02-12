@@ -28,7 +28,7 @@ export default function PinElement() {
               contentTitle="📝 Sigma TodoList"
               contentDesc={
                 <>
-                  <p className="text-slate-300">
+                  <p className="dark:text-slate-300 font-bold">
                     A simple todo-list application where users can :
                   </p>
                   <ul className="mt-2 list-disc">
@@ -53,7 +53,7 @@ export default function PinElement() {
               contentTitle="🗨️ ERChat - Chatting App"
               contentDesc={
                 <>
-                  <p className="text-slate-300">
+                  <p className="dark:text-slate-300 font-bold">
                     A modern real-time chat application with features :
                   </p>
                   <ul className="mt-2 list-disc">

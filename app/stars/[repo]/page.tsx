@@ -27,7 +27,7 @@ export default async function StarsPage({
   // Menunggu semua data selesai di-fetch
   const dataStargazer = await completeStargazer();
   return (
-    <div className="text-[#f0f6fc] min-h-screen bg-[#0d1117]">
+    <div className="dark:text-[#f0f6fc] min-h-screen dark:bg-[#0d1117]">
       <HeaderStars repo={repo} />
       <div className="max-w-[75em] mx-auto px-4">
         <h1 className="semi-bold text-2xl mt-8 mb-3">Stargazers</h1>
@@ -35,9 +35,9 @@ export default async function StarsPage({
 
         {/* KATEGORI */}
         <div className="border-b-[.5px] border-gray-700 flex">
-          <div className="flex gap-2 items-center justify-center relative top-[1px] rounded-t-md mt-3 border-t-[.5px] border-l-[.5px] border-r-[.5px] border-gray-500 py-2 px-4 bg-[#0d1117]">
+          <div className="flex gap-2 items-center justify-center relative top-[1px] rounded-t-md mt-3 border-t-[.5px] border-l-[.5px] border-r-[.5px] border-gray-500 py-2 px-4 dark:bg-[#0d1117]">
             All
-            <div className="rounded-full bg-[#1d2329] h-[20px] w-[20px] text-sm flex items-center justify-center">
+            <div className="rounded-full text-white bg-[#1d2329] h-[20px] w-[20px] text-sm flex items-center justify-center">
               {dataStargazer.length}
             </div>
           </div>

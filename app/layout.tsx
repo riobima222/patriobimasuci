@@ -7,6 +7,8 @@ import { AnimatePresence } from "framer-motion";
 
 // CONTEXT :
 import ModalContextProvider from "@/context/modalContext";
+import ToogleContextProvider from "@/context/toogleContext";
+import HtmlWrapper from "./htmlWrapper";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -20,7 +22,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "blog - riobima222",
+  title: "riobima - portfolio",
   description: "Patrio bimasuci blog, you'll find a greate write",
 };
 
@@ -30,14 +32,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <AnimatePresence mode="wait">
-          <ModalContextProvider>{children}</ModalContextProvider>
-        </AnimatePresence>
-      </body>
-    </html>
+    <ToogleContextProvider>
+      <HtmlWrapper>
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        >
+          <AnimatePresence mode="wait">
+            <ModalContextProvider>{children}</ModalContextProvider>
+          </AnimatePresence>
+        </body>
+      </HtmlWrapper>
+    </ToogleContextProvider>
   );
 }
