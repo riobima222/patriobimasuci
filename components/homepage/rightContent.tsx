@@ -21,7 +21,7 @@ export default function RightContent() {
     <div>
       <div className="max-w-[64em] w-full border-[.5px] border-gray-700 rounded-md md:p-10 p-4">
         <Toogle />
-        <h5 className={`${robotoMono.className} text-sm`}>
+        <h5 className={`${robotoMono.className} text-sm mt-8`}>
           Patrio Bimasuci / README.md
         </h5>
         <div className="flex items-center gap-2 text-4xl mt-6">
